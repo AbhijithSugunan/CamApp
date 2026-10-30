@@ -1,0 +1,27 @@
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+body.idle { cursor: none; }
+#video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+#stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+#overlay {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: radial-gradient(circle at center, rgba(20,0,40,.55), rgba(0,0,0,.85));
+  color: #fff; font-family: system-ui, sans-serif; transition: opacity .6s;
+}
+#overlay.hidden { opacity: 0; pointer-events: none; }
+#overlay.ready { background: transparent; pointer-events: none; }
+#overlay.ready .card { background: rgba(0,0,0,.45); }
+.card { text-align: center; padding: 28px 40px; border-radius: 20px; }
+.card h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 56px); }
+#status { font-size: 20px; margin: 8px 0; }
+#status.error { color: #ff7b7b; }
+.hint { opacity: .7; font-size: 14px; }
+#debug {
+  position: fixed; top: 8px; left: 8px; padding: 6px 10px; border-radius: 6px;
+  background: rgba(0,0,0,.6); color: #0f0; font: 13px/1.4 ui-monospace, monospace; white-space: pre;
+}
+#toast {
+  position: fixed; left: 50%; bottom: 6vh; transform: translate(-50%, 20px); opacity: 0;
+  padding: 12px 28px; border-radius: 999px; background: rgba(0,0,0,.65); color: #fff;
+  font: 600 clamp(18px, 2.5vw, 32px) system-ui, sans-serif; transition: opacity .3s, transform .3s; pointer-events: none;
+}
+#toast.show { opacity: 1; transform: translate(-50%, 0); }

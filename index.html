@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamApp – Character Booth</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <video id="video" playsinline muted></video>
+    <canvas id="stage"></canvas>
+    <div id="overlay">
+      <div class="card">
+        <h1>👽 Character Booth 😄</h1>
+        <p id="status">Loading…</p>
+        <p class="hint">Click for full screen · F / Esc toggle full screen · T theme · N name tags · C switch camera · D debug</p>
+      </div>
+    </div>
+    <div id="debug" hidden></div>
+    <div id="toast"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
